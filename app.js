@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // require('./server/routes')(app);
 app.use("/api", require("./server/routes"));
 app.use("/api/user", require("./server/routes/user"));
+app.use("/api/organization", require("./server/routes/organization"));
 
 app.get("*", (req, res) =>
   res.status(200).send({
