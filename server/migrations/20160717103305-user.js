@@ -8,17 +8,18 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       name: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
       },
       email: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
       },
+
       /*we can relate user with organizaton*/
 
       //   organization_id: {
-      //     type: sequelize.INTEGER,
+      //     type: Sequelize.INTEGER,
       //     allowNull: false,
       //     references: {
       //       model: OrganizationModel,
