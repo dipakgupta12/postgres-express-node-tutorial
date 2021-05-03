@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) =>
-    queryInterface.createTable('TodoItems', {
+    queryInterface.createTable("TodoItems", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -15,6 +15,11 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         defaultValue: false,
       },
+      complete_status: {
+        type: Sequelize.ENUM,
+        values: ["pending", "done", "inprogress"],
+        defaultValue: "pending",
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -25,14 +30,14 @@ module.exports = {
       },
       todoId: {
         type: Sequelize.INTEGER,
-        onDelete: 'CASCADE',
+        onDelete: "CASCADE",
         references: {
-          model: 'Todos',
-          key: 'id',
-          as: 'todoId',
+          model: "Todos",
+          key: "id",
+          as: "todoId",
         },
       },
     }),
   down: (queryInterface /* , Sequelize */) =>
-    queryInterface.dropTable('TodoItems'),
+    queryInterface.dropTable("TodoItems"),
 };
